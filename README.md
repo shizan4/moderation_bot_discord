@@ -7,4 +7,4 @@ this is a discord moderation bot but hidden as a music player. it wont show who 
 
 /disconnect works as kick 
 
-trying to bring more commands together
+trying to bring more <br>commands together
