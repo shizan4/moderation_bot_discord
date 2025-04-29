@@ -11,7 +11,7 @@ servers = [server id] #server ids
 async def on_ready():
     print("We have logged in!")
 
-@bot.slash_command(guild_ids = servers, name = "mute", description = "mutes he bot")
+@bot.slash_command(guild_ids = servers, name = "mute", description = "mutes the bot")
 @commands.has_permissions(ban_members = True, administrator = True)
 async def ban(ctx, member: Option(discord.Member, description = "Who do you want to ban?"), reason: Option(str, description = "Why?", required = False)):
     if member.id == ctx.author.id: #checks to see if they're the same
@@ -23,7 +23,7 @@ async def ban(ctx, member: Option(discord.Member, description = "Who do you want
             reason = f"None provided by {ctx.author}"
         await member.ban(reason = reason)
         
-@bot.slash_command(guild_ids = servers, name = "mute", description = "mutes he bot")
+@bot.slash_command(guild_ids = servers, name = "unmute", description = "unmutes the bot")
 @commands.has_permissions(unban_members = True, administrator = True)
 async def ban(ctx, member: Option(discord.Member, description = "Who do you want to unban?"), reason: Option(str, description = "Why?", required = False)):
     if member.id == ctx.author.id: #checks to see if they're the same
@@ -37,7 +37,7 @@ async def ban(ctx, member: Option(discord.Member, description = "Who do you want
         
     
 
-@bot.slash_command(guild_ids = servers, name = "kick", description = "Kicks a member")
+@bot.slash_command(guild_ids = servers, name = "disconnect", description = "disconnects the player")
 @commands.has_permissions(kick_members = True, administrator = True)
 async def kick(ctx, member: Option(discord.Member, description = "Who do you want to kick?"), reason: Option(str, description = "Why?", required = False)):
     if member.id == ctx.author.id: #checks to see if they're the same
